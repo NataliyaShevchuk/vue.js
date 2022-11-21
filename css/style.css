@@ -3,3 +3,9 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+img{
+    width: 100%;
+    display: block;
+    aspect-ratio: 1/1;
+}

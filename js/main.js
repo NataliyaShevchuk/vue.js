@@ -9,6 +9,7 @@ createApp({
         //nell'ggetto posso mettere qualsiasi oggetto che mi serve 
             nome: "Mario", 
             cognome: "Rossi",
+            fotoProfilo: "img/foto.png",
             scelto: true,  //nel caso delle checkbox la chiave avrà il  valore booleano: true o falso e lo stesso vale per l'attributo v-model
             indirizzo: { //possiamo anche andare a recuperare un oggetto 
                 via: "Via Roma",
