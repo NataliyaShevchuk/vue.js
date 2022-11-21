@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+    <div id="app">
+        <main class="container">
+            <h2> Benvenuto {{nome}} {{cognome}} </h2>
+            <input type="userName" v-model="nome">
+            <input type="checkbox" v-model="scelto">  
+            <p>Indirizzo: {{indirizzo.via + ", " + indirizzo.città + " ," + indirizzo.cap}} </p>
+
+            <button class="btn btn-primary" :class="btnDanger" @click="onBtnClick">Cliccami</button>
+
+            <hr>
+            <div class="mt-5">
+                <h1>Gioco dei dadi</h1>
+                <div class="row">
+                    <div class="col">
+                        Numero utente: <strong> {{numUtente}} </strong>
+                    </div>
+                    <div class="col">
+                        Numero Ai: <strong> {{numAi}} </strong>
+                    </div>
+
+                </div>
+                <div class="alert alert-info" > {{gameResult}} </div>
+                <div class="btn btn-primary" @click="startDiceGame">Avvia gioco</div>
+
+            </div>
+        </main>
+    </div>
+
+
+    <script src="js/main.js"></script>
+
+</body>
+</html>
