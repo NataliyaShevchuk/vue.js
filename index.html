@@ -13,7 +13,9 @@
 <body>
     <div id="app">
         <main class="container">
-            <h2> Benvenuto {{nome}} {{cognome}} </h2>
+
+            <!-- Day 1 -->
+            <!-- <h2> Benvenuto {{nome}} {{cognome}} </h2>
             <input type="userName" v-model="nome">
             <input type="checkbox" v-model="scelto">  
             <p>Indirizzo: {{indirizzo.via + ", " + indirizzo.città + " ," + indirizzo.cap}} </p>
@@ -37,12 +39,63 @@
                 <div class="alert alert-info" > {{gameResult}} </div>
                 <div class="btn btn-primary" @click="startDiceGame">Avvia gioco</div>
 
+            </div> -->
+
+            <!-- Day 2 -->
+
+                <h1 class="my-5">Vue Intro | User</h1>
+                <div v-show="">Contenuto dentro lo v-show</div>
+
+                <!-- Form login -->
+            <div class="row justify-content-center" v-if="userLoggedIn === false">
+                <div class="col-md-5">
+                    <div class="alert alert-danger" v-if="loginError">
+                        {{loginError}}
+                    </div>
+                    <form @submit.prevent="onLoginFormSubmit">
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Nome Utente" v-model="user.name">
+                        </div>
+                        <div class="mb-3">
+                            <input type="password" class="form-control" placeholder="password" v-model="user.password">
+                        </div>
+                        <div class="mb-3">
+                            <select v-model="user.role" name="" id="">
+                                <option value="">Scegli un ruolo</option>
+                                <option value="">1</option>
+                                <option value="">2</option>
+                                <option value="">3</option>
+                            </select>
+                        </div>
+                        <div class="mb-3" v-show="user.role === user">
+                            <input type="email" class="form-control" placeholder="email" v-model="user.email">
+                        </div>
+
+                        <div class="text-center">
+                            <button class="btn btn-success">Accedi</button>
+                        </div>
+                    </form>
+                </div>
             </div>
+
+            <!-- Area privata -->
+            <div v-else>
+                <h2>Benvenuto  {{user.nome}} </h2>
+
+                <i class="fas fa-eye" v-if="user.role === 1"></i>
+                <i class="fas fa-user-group" v-if="user.role === 2"></i>
+                <i class="fas fa-user" v-else=""></i>
+            </div>
+            <h2>Area privata</h2>
+
+            <p class="lead">Area segreta</p>
         </main>
     </div>
 
 
     <script src="js/main.js"></script>
+    <!-- <script src="js/utilities.js"></script> -->
+    <script src="js/list.js"></script>
 
 </body>
 </html>

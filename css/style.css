@@ -4,8 +4,27 @@
     box-sizing: border-box;
 }
 
-img{
+/* img{
     width: 100%;
     display: block;
     aspect-ratio: 1/1;
+} */
+
+.thumbnail-container {
+    opacity: .6;
+    transition: all .5s;
 }
+
+.thumbnail-container.active {
+    border: 5px solid rgb(235, 244, 172);
+    opacity: 1;
+}
+
+.btns-container {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    left: 0;
+}
+
