@@ -39,7 +39,8 @@ createApp({
         },
         onThmbnailClick (clickedImgIndex){
             this.currenImgIndex = clickedImgIndex;
-        }
+        },
+        
     },
     mounted () {
         console.log("mounted called");
